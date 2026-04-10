@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Employer Dashboard — Admin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #0f172a; color: #f8fafc; }
+    .shell { max-width: 1200px; margin: 0 auto; padding: 32px 20px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+    h1 { margin: 0; font-size: 28px; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: #1e293b; color: #cbd5e1; font-size: 13px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .card { background: #1e293b; border: 1px solid rgba(99,102,241,0.15); border-radius: 14px; padding: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .card h3 { margin: 0 0 8px; font-size: 16px; color: #cbd5e1; }
+    .metric { font-size: 30px; font-weight: 700; margin: 4px 0 8px; }
+    .muted { color: #94a3b8; font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    th, td { padding: 10px 8px; text-align: left; font-size: 14px; }
+    th { color: #cbd5e1; border-bottom: 1px solid rgba(99,102,241,0.2); text-transform: uppercase; letter-spacing: 0.4px; font-size: 12px; }
+    tr + tr td { border-top: 1px solid rgba(99,102,241,0.08); }
+    .status { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border-radius: 999px; font-size: 12px; }
+    .status.active { background: rgba(16,185,129,0.12); color: #22c55e; }
+    .status.pending { background: rgba(245,158,11,0.12); color: #f59e0b; }
+    .status.rejected { background: rgba(239,68,68,0.12); color: #ef4444; }
+    .list { display: grid; gap: 12px; }
+    .row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 10px 12px; background: #111827; border: 1px solid rgba(99,102,241,0.12); border-radius: 10px; }
+    .row strong { display: block; margin-bottom: 4px; }
+    a.btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 12px; background: #6366f1; color: #fff; border-radius: 10px; text-decoration: none; font-weight: 600; box-shadow: 0 6px 18px rgba(99,102,241,0.3); }
+    a.btn:hover { background: #4f46e5; }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div>
+        <h1>Employer Dashboard</h1>
+        <div class="pill"><i class="fas fa-file-alt"></i><span>Overview</span></div>
+      </div>
+      <a class="btn" href="admin-dashboard.html"><i class="fas fa-arrow-left"></i>Back to Admin</a>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Open Jobs</h3>
+        <div class="metric">22</div>
+        <div class="muted">5 roles expire this week</div>
+      </div>
+      <div class="card">
+        <h3>Total Applicants</h3>
+        <div class="metric">384</div>
+        <div class="muted">+26 since yesterday</div>
+      </div>
+      <div class="card">
+        <h3>Interviews Scheduled</h3>
+        <div class="metric">11</div>
+        <div class="muted">Next: Wed 2:00 PM</div>
+      </div>
+      <div class="card">
+        <h3>Average Time to Hire</h3>
+        <div class="metric">18 days</div>
+        <div class="muted">Target: under 21 days</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Active Job Postings</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>Location</th>
+            <th>Applicants</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Senior Backend Engineer</td>
+            <td>Remote</td>
+            <td>58</td>
+            <td><span class="status active">Open</span></td>
+          </tr>
+          <tr>
+            <td>Product Manager</td>
+            <td>New York, NY</td>
+            <td>41</td>
+            <td><span class="status pending">Reviewing</span></td>
+          </tr>
+          <tr>
+            <td>UX Researcher</td>
+            <td>Austin, TX</td>
+            <td>23</td>
+            <td><span class="status active">Open</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top: 16px;">
+      <h3>Actions</h3>
+      <div class="list">
+        <div class="row"><div><strong>Close filled role</strong>Mark Junior QA Engineer as filled.</div><span class="status pending">Review</span></div>
+        <div class="row"><div><strong>Invite candidates</strong>Share Product Manager posting with shortlisted profiles.</div><span class="status active">Open</span></div>
+        <div class="row"><div><strong>Refresh postings</strong>Boost roles that are older than 20 days.</div><span class="status active">Open</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
